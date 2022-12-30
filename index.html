@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<title>card</title>
+	<script src="https://kit.fontawesome.com/ffd01bc422.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+	  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap');
+
+		*
+		{
+			padding: 0px;
+			margin: 0px;
+			box-sizing: border-box;
+		  font-family: 'Nunito', sans-serif;
+		}
+
+		body
+		{
+			background: white;
+		}
+		.main_page
+		{
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.main_page::before
+		{
+			content: "";
+			position: absolute;
+			left: -80px;
+			top: 0;
+			width: 400px;
+			height: 650px;
+			background: linear-gradient(to top, #7663EB, #B545F0);
+			border-bottom-left-radius: 200px;
+			border-bottom-right-radius: 200px;
+		}
+
+		.main_page::after
+		{
+			content: "";
+			position: absolute;
+			right: -80px;
+			bottom: 0;
+			width: 400px;
+			height: 450px;
+			background: rgb(245, 245, 245);
+			border-top-left-radius: 200px;
+			border-top-right-radius: 200px;
+		}
+			
+		.phone-screen-main
+		{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+		}			
+		
+
+		.phone-screen::before
+		{
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, 0);
+			width: 60%;
+			height: 25px;
+			background: white;
+			border-bottom-left-radius: 15px;
+			border-bottom-right-radius: 15px;
+			border: none;
+			z-index: 1;
+		}
+
+		.phone-logo
+		{
+			width: 100%;
+			height: 100px;
+			background: #7663EB;
+			background: linear-gradient(to right, #7663EB, #B545F0);
+			border-radius: 18px 18px 10px 10px;
+			border: none;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px 8px 0;
+		}
+		.phone-logo .box img
+		{
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+			border: 3px solid white;
+			margin: 0 10px;
+		}
+		.box p 
+		{
+			font-size: 10px;
+			color: white;
+		}
+		.box p span
+		{
+			font-size: 12px;
+			color: white;
+		}
+		.phone-logo i 
+		{
+			color: white;
+		}
+
+		.box
+		{
+		 	display: flex;
+		 	align-items: center;
+		 	justify-content: center;
+		}
+
+
+
+
+
+		.chat-box_main
+		{
+			width: 100%;
+			height:  auto;
+			padding: 8px;
+
+			
+		}
+		.chat-box_outgoing .chat-box_upcoming
+		{
+			height: auto;
+		}
+		
+		.message
+		{
+			font-size: 10px;
+			font-weight: 500;
+			padding: 6px 6px;
+			border-radius: 8px 8px 8px 2px;
+			display: inline-block;
+			margin: 2px 0;
+			float: right;
+		}
+
+		.chat-box_outgoing
+		{
+			width: 70%;
+			display: inline-block;
+
+		}
+
+		.chat-box_outgoing .message
+		{
+			color: black;
+		}
+
+		.chat-box_upcoming
+		{
+			width: 60%;
+			float: right;
+			display: inline-block;
+			margin: 6px 0;
+		}
+		
+		
+
+		.chat-box_upcoming .img
+		{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 4px;
+			
+			
+		}
+		.chat-box_upcoming .img img
+		{
+			width: 50px;
+			height: auto;
+			padding: 0px 2px;
+			border-radius: 10px;
+		}
+
+		.chat-box_outgoing .message
+		{
+			background: rgb(235, 235, 235);
+			color: #B545F0;
+		}
+
+		.chat-box_upcoming .message
+		{
+			background: #fff;
+		}
+
+		
+
+		.highlight-chat-main
+		{
+			width: 65%;
+		}
+
+		.chat-high-lighted
+		{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: #7663EB;
+			background: linear-gradient(to left, #7663EB, #B545F0);
+			padding: 6px 8px;
+			color: white;
+			margin: 6px 0;
+			border-radius: 8px 8px 8px 2px;
+		}
+
+		.chat-high-lighted p
+		{
+			font-size: 12px;
+		}
+
+		.chat-high-lighted p i
+		{
+			margin-right: 4px;
+		}
+
+		.chat-high-lighted span
+		{
+			font-size: 14px;
+		}
+
+		.screen-text-box
+		{
+			width: 100%;
+			height: 30px;
+			background: white;
+			border-radius: 35px;
+			padding: 0px 8px;
+			border: none;
+		}
+
+		.input-box 
+		{
+			display: flex;
+			align-items: center;
+		}
+
+		.input-box i
+		{
+			background: black;
+			border-radius: 100%;
+			color: #fff;
+			font-size: 15px;
+			padding: 4px 8px;
+		}
+
+		.input-box input
+		{
+			width: 100%;
+			height: 30px;
+			border: none;
+			border-radius: 35px;
+			background: transparent;
+			margin: 0px 0px;
+			outline: none;
+			padding-left: 10px;
+		}
+
+		.simple-text
+		{
+			width: 60%;
+		}
+
+		.phone-screen-main
+		{
+			width: 65%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		.phone-screen
+		{
+			width: 280px;
+			height: 540px;
+			background: rgb(240, 240, 240);
+			border: 10px solid white;
+			border-radius: 30px;
+			position: relative;
+			box-shadow: 8px 8px 20px rgba(210, 210, 210, 0.4);
+		}
+
+
+                              /*		/////////////////////// media queary///////////////////*/
+
+
+        @media (max-width:480px)
+        {
+        	.main_page
+			{
+				position: relative;
+				width: 100%;
+				max-height: 150vh;
+				overflow: hidden;
+				padding: 40px 0;
+			}
+
+			.phone-logo
+			{
+				width: 100%;
+				height: 70px;
+				background: #7663EB;
+				background: linear-gradient(to right, #7663EB, #B545F0);
+				border-radius: 18px 18px 10px 10px;
+				border: none;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 10px 8px 0;
+			}
+
+        	.main_page::before
+			{
+				content: "";
+				position: absolute;
+				left: -2px;
+				top: 0;
+				width: 230px;
+				height: 450px;
+				background: linear-gradient(to top, #7663EB, #B545F0);
+				border-bottom-left-radius: 200px;
+				border-bottom-right-radius: 200px;
+			}
+
+			.main_page::after
+			{
+				content: "";
+				position: absolute;
+				right: -40px;
+				bottom: 0;
+				width: 200px;
+				height: 450px;
+				background: rgb(245, 245, 245);
+				border-top-left-radius: 200px;
+				border-top-right-radius: 200px;
+			}
+
+			.chat-box_upcoming .img img
+			{
+				width: 40px;
+				height: auto;
+				padding: 0px 2px;
+				border-radius: 10px;
+				margin: 0px 2px;
+
+			}
+
+			.phone-screen-main
+			{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+/*				justify-content: center;*/
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+			}
+
+			.highlight-chat-main
+			{
+				width: 75%;
+			}
+
+			.phone-screen
+			{
+				width: 250px;
+				height: 508px;
+				background: rgb(240, 240, 240);
+				border: 10px solid white;
+				border-radius: 30px;
+				position: relative;
+				box-shadow: 8px 8px 20px rgba(210, 210, 210, 0.4);
+			}
+
+			.simple-text
+			{
+				width: 100%;
+/*				padding: 20px 80px;*/
+				margin-top: 40px;
+				text-align: center;
+
+			}
+        }                      
+
+        .attritbution
+        {
+        	width: 100%;
+        	text-align: center;
+        }
+
+
+	</style>
+	
+</head>
+<body>
+<div class="main_page">
+
+	<div class="phone-screen-main">
+		<div class="phone-screen">
+			<div class="phone-logo">
+				<div class="box">
+
+					<i class="fa-solid fa-angle-left"></i>
+					<img src="images/avatar.jpg" alt>
+					<p><span>Samuel Green</span> <br>Available to Walk</p>
+				</div>
+				
+				<i class="fa-solid fa-ellipsis-vertical"></i>
+			</div>
+
+
+			<div class="chat-box_main">
+				<div class="chat-box_outgoing">
+					<div class="chat">
+						<p class="message">That sounds great.I'd be happy to discuss more.</p>
+						<p class="message">Could you send over some pictures of your dog. please?</p>	
+					</div>	
+				</div>
+
+				<div class="chat-box_upcoming">
+					<div class="img">
+						<img src="images/dog-image-1.jpg" alt>
+						<img src="images/dog-image-2.jpg" alt>
+						<img src="images/dog-image-3.jpg" alt>
+				    </div>
+
+					<p class="message">Here are a few pictures.She's a haapy girll?</p>
+					<p class="message">Can you make it</p>	
+				</div>
+			
+
+			    <div class="chat-box_outgoing">
+			    	<p class="message">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+			    </div>
+
+			    <div class="highlight-chat-main">
+			    	<div class="chat-high-lighted">
+			    		<p><i class="fa-regular fa-circle"></i> 30 minute walk </p> <span> $29 </span>
+			    	</div>
+			    	<div class="chat-high-lighted">
+			    		<p><i class="fa-regular fa-circle"></i> 1 hour walk </p><span>$40</span>
+			    	</div>	
+			    </div>
+
+			     <div class="screen-text-box">
+			    	<div class="input-box">
+						<input type="text" placeholder="Type a message"name="" >	
+	                    <i class="fa-solid fa-angle-right"></i>		    	
+	                </div>
+			    </div>
+
+			</div>   
+		</div>
+
+
+
+		<div class="simple-text">
+			<h1>Simple booking</h1>
+			<p>Stay in touch with our dog walkers thought the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+		</div>
+
+  	</div>
+
+
+
+
+
+		
+			
+		
+
+</div>
+
+
+<div class="attritbution">
+	challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+	Coded by <a href="https://www.frontendmentor.io/profile/Pradeep-Tiwari88">Pradeep tiwari</a>.
+	
+</div>
+
+</body>
+</html>
